@@ -1,25 +1,25 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Pad from './Pad';
+import Texts from './Texts';
+import ReducerProvider from './ReducerProvider';
+import { initialState } from '.';
 
 function App() {
+
+  const [action, setAction] = React.useState(false)
+  const ReducerContext = React.createContext(initialState);
+  console.log('gfdgf')
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <ReducerProvider initialState = {initialState} ReducerContext = {ReducerContext}>
+        <Texts ReducerContext = {ReducerContext}/>
+        <Pad ReducerContext = {ReducerContext}/>
+      </ReducerProvider>
+    </>
   );
 }
 

@@ -1,0 +1,15 @@
+.Pad{
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width : 300px;
+}
+.Pad .numericsBtns{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.Pad .numericsBtns .btn{
+    flex-basis : 30%;
+    padding: 0px;
+}
